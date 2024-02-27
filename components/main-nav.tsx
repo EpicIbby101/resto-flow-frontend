@@ -1,3 +1,5 @@
+"use client"
+
 import { cn } from "@/lib/utils";
 import { Category } from "@/types";
 import Link from "next/link";
@@ -33,3 +35,5 @@ const MainNav: React.FC<MainNavProps> = ({ data }) => {
 };
 
 export default MainNav;
+
+// 7:42 Adding API routes to Navbar
