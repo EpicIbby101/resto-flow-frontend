@@ -13,12 +13,12 @@ export interface Category {
 export interface Product {
   id: string;
   name: string;
-  category: string;
+  category: Category;
   price: string;
   quantity: Quantity;
   isFeatured: boolean;
   isArchived: boolean;
-  image: Image[];
+  images: Image[];
 }
 
 export interface Image {
