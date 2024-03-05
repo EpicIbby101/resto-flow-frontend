@@ -1,0 +1,27 @@
+import { Product } from "@/types";
+import qs from "query-string";
+
+const URL = `${process.env.PUBLIC_API_URL}/products`;
+
+interface Query {
+  categoryId?: string;
+  quantityId?: string;
+  isFeatured?: boolean;
+}
+
+const getProducts = async (query: Query): Promise<Product[]> => {
+  const url = qs.stringifyUrl({
+    url: URL,
+    query: {
+      categoryId: query.categoryId,
+      quantityId: query.quantityId,
+      isFeatured: query.isFeatured,
+    },
+  });
+
+  const res = await fetch(URL);
+
+  return res.json();
+};
+
+export default getProducts;
